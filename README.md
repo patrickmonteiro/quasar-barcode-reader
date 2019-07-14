@@ -1,6 +1,6 @@
 # Quasar Barcode Reader (quasar-barcode-reader)
 
-A Quasar Framework app
+A barcode reader only with Javascript in the Quasar Framework.
 
 ## Install the dependencies
 ```bash

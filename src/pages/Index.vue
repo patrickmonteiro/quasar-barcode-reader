@@ -1,6 +1,7 @@
 <template>
   <div class="row items-center" style="height: 100vh">
     <div class="col text-center q-pa-sm ">
+      <q-select v-show="cameraStatus === 0" outlined v-model="reader" :options="options" label="tipo" />
       <q-btn color="primary" icon="camera_alt" label="Ler Código de Barras"
         class="full-width" size="lg" @click="iniciarLeitor()"
         v-show="cameraStatus === 0"/>
@@ -22,7 +23,21 @@ export default {
     return {
       code: '',
       dialog: false,
-      cameraStatus: 0
+      cameraStatus: 0,
+      options: [
+        'code_128_reader',
+        'ean_reader',
+        'ean_8_reader',
+        'code_39_reader',
+        'code_39_vin_reader',
+        'codabar_reader',
+        'upc_reader',
+        'upc_e_reader',
+        'i2of5_reader',
+        '2of5_reader',
+        'code_93_reader'
+      ],
+      reader: ''
     }
   },
   methods: {
@@ -41,7 +56,7 @@ export default {
         frequency: 10,
         decoder: {
           readers: [
-            'ean_reader'
+            this.reader
           ],
           multiple: false
         },

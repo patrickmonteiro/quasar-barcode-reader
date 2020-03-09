@@ -2,6 +2,10 @@
 
 A barcode reader only with Javascript in the Quasar Framework.
 
+## Library used:
+
+[QuaggaJS](https://serratus.github.io/quaggaJS/)
+
 ## Install the dependencies
 ```bash
 npm install
